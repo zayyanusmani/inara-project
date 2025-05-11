@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My First Bootstrap Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<center>
+    <h1>Stats</h1>
+    <div>
+        <h4>No of messages sent from myself to other users</h4>
+        <br/>
+        <br/>
+        <br/>
+        <button><a href="{% url 'messages:stats' %}">Hit</a></button>
+        <table border="1" >
+            <tr>
+              <th>Age bracket</th>
+              <th>No of messages sent</th>  
+            </tr>
+            {% for data in datas %}
+            <tr>
+                <td>{{ data.age }}</td>
+                <td>{{ data.count }}</td>
+            </tr>
+            {%endfor%}
+          </table>
+    </div>
+
+</center>
+  <!-- Bootstrap JS (Optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
